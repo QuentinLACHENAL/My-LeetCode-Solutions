@@ -1,0 +1,20 @@
+name: Sync Leetcode
+
+on:
+  workflow_dispatch: # synchro manuellement via un bouton
+  schedule:
+    - cron: "0 0 * * *" # automatiquement tous les jours à minuit
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Sync
+      uses: joshcai/leetcode-sync@v1.7
+      with:
+        github-token: ${{ github.token }}
+        leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
+        leetcode-session: ${{ secrets.LEETCODE_SESSION }}
+        destination-folder: my-folder # dossier où les exos iront
+        verbose: true
