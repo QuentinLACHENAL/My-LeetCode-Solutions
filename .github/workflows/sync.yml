@@ -1,16 +1,16 @@
-name: Sync Leetcode
+#name: Sync Leetcode
 
-on:
-  workflow_dispatch: # synchro manuellement via un bouton
-  schedule:
-    - cron: "0 0 * * *" # automatiquement tous les jours à minuit
+#on:
+#  workflow_dispatch: # synchro manuellement via un bouton
+#  schedule:
+#    - cron: "0 0 * * *" # automatiquement tous les jours à minuit
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+#jobs:
+#  build:
+#    runs-on: ubuntu-latest
 
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+#    env:
+#      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
     - name: Sync
